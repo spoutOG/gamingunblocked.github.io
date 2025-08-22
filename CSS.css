@@ -1,0 +1,153 @@
+    body {
+      font-family: Monsterrat, sans-serif;
+      background-color: #eeeeee;
+      color: #333;
+      /* Added overflow-x to hide the horizontal scrollbar during animation */
+      overflow-x: hidden;
+    }
+    header, footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ddd;
+    }
+    main {
+      padding: 20px;
+    }
+    article {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+ul {
+  list-style-type: circle;
+  margin: 1px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+/* Classes */
+
+.header {
+  text-align: center;
+  padding: 20px;
+}
+
+.active {
+  background-color: #000000;
+  color: white !important;
+}
+.btn {
+  border-radius: 25px;
+  box-shadow: #00000081 0px 0px 3px;
+}
+
+.gbtn {
+  background-color: #0077ff; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: #00000081 0px 0px 3px;
+}
+
+.gbtnd {
+    cursor: not-allowed;
+    background-color: #b6b6b6; /* Grey */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    transition: ease-in 0.5s;
+      box-shadow: #00000081 0px 0px 3px;
+}
+
+.gbtnerr {
+    background-color: #ff4d4d; /* Red */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    transition: ease-in 0.5s;
+    cursor: help;
+      box-shadow: #00000081 0px 0px 3px;
+}
+.gbtnw {
+    background-color: #ffcc00; /* Yellow */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    transition: ease-in 0.5s;
+    cursor: pointer;
+      box-shadow: #00000081 0px 0px 3px;
+}
+
+.button {
+    background-color: #0077ff; /* Blue */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    transition: ease-in 0.5s;
+    cursor: pointer;
+      box-shadow: #00000081 0px 0px 3px;
+    
+}
+
+.link {
+  color: #0077ff;
+  text-decoration: none;
+}
+
+.link:hover {
+  font-style: italic;
+  text-shadow: #b3d7ff 0px 0px 5px;
+}
