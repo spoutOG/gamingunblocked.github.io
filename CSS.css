@@ -1,3 +1,164 @@
+/* Flat Design Dark Mode */
+body.dark-mode {
+  background-color: #181c20;
+  color: #e0e6ed;
+}
+body.dark-mode .sidebar {
+  background: #23242a;
+  border-right: 1px solid #23242a;
+  box-shadow: 1px 0 0 0 #181c20;
+}
+body.dark-mode .sidebar-title {
+  color: #e0e6ed;
+}
+body.dark-mode .sidebar a {
+  color: #e0e6ed;
+  background: none;
+}
+body.dark-mode .sidebar a:hover, body.dark-mode .sidebar .active > a {
+  background: #232a36;
+  color: #ffffff;
+}
+body.dark-mode .sidebar .active > a {
+  background: #397eff;
+  color: #ffffff;
+}
+body.dark-mode .sidebar-toggle {
+  background: #232a36;
+  color: #648dff;
+}
+body.dark-mode .sidebar-toggle:hover {
+  background: #ffe066;
+  color: #23242a;
+}
+body.dark-mode .with-sidebar {
+  background: #181c20;
+  color: #e0e6ed;
+}
+body.dark-mode header, body.dark-mode footer {
+  background-color: #23242a;
+  color: #e0e6ed;
+}
+body.dark-mode main {
+  background: none;
+  color: #e0e6ed;
+}
+body.dark-mode article {
+  background-color: #23242a;
+  border: 1px solid #232a36;
+  color: #e0e6ed;
+}
+body.dark-mode .header {
+  color: #ffffff;
+}
+body.dark-mode .btn, body.dark-mode .gbtn, body.dark-mode .gbtnw, body.dark-mode .gbtnerr, body.dark-mode .gbtnd, body.dark-mode .button {
+  background-color: #232a36;
+  color: #ffffff;
+  border: 1px solid #232a36;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+body.dark-mode .gbtn {
+  background-color: #4787fc;
+  color: #ffffff; 
+}
+
+body.dark-mode .gbtnw {
+  color: #232a36;
+  background-color: #ffe066;
+}
+body.dark-mode .gbtnerr {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+body.dark-mode .gbtnd {
+  background-color: #444950;
+  color: #b6b6b6;
+}
+body.dark-mode .link {
+  color: #7abaff;
+}
+body.dark-mode .link:hover {
+  color: #ffe066;
+  text-shadow: 0 0 8px #ffe066;
+}
+/* Dark mode toggle button in sidebar */
+.sidebar-toggle {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 6px 14px;
+  background: #e0e0e0;
+  color: #232a36;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  vertical-align: middle;
+}
+.sidebar-toggle:hover {
+  background: #0077ff;
+  color: #fff;
+}
+/* Sidebar Navigation */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background: #f7f7f7;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1100;
+  box-shadow: 1px 0 0 0 #e0e0e0;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  position: static;
+}
+
+.sidebar li {
+  display: block;
+}
+
+.sidebar a {
+  display: block;
+  color: #232a36;
+  padding: 18px 24px;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 0;
+  font-size: 1.08em;
+  letter-spacing: 0.2px;
+  transition: background 0.18s, color 0.18s;
+  background: none;
+}
+.sidebar a:hover, .sidebar .active > a {
+  background: #e0e0e0;
+  color: #0077ff;
+}
+.sidebar .active > a {
+  font-weight: 700;
+  background: #0077ff;
+  color: #fff;
+}
+
+/* Push main content to the right of sidebar */
+.with-sidebar {
+  margin-left: 200px;
+}
     body {
       font-family: Monsterrat, sans-serif;
       background-color: #eeeeee;
@@ -20,34 +181,6 @@
       border-radius: 5px;
       background-color: #fff;
     }
-ul {
-  list-style-type: circle;
-  margin: 1px;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-radius: 10px;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
-}
 /* Classes */
 
 .header {
@@ -56,16 +189,45 @@ li a:hover {
 }
 
 .active {
-  background-color: #000000;
+  background-color: #888888;
   color: white !important;
 }
 .btn {
   border-radius: 25px;
-  box-shadow: #00000081 0px 0px 3px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+  box-shadow: 0 2px 8px 0 #e0e0e0;
+  will-change: transform, box-shadow;
+}
+.btn:hover, .gbtn:hover, .gbtnw:hover, .gbtnerr:hover, .gbtnd:hover, .button:hover {
+  filter: brightness(1.04);
+  box-shadow: 0 2px 6px 0 #b3d7ff22;
+  transform: translateY(-1px) scale(1.02);
+}
+.btn:active, .gbtn:active, .gbtnw:active, .gbtnerr:active, .gbtnd:active, .button:active {
+  filter: brightness(0.98);
+  box-shadow: 0 1px 2px 0 #b3d7ff11;
+  transform: scale(0.97);
+  transition: transform 0.08s, box-shadow 0.08s, filter 0.08s;
 }
 
 .gbtn {
-  background-color: #0077ff; /* Green */
+  background-color: #248aff; /* Blue */
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+  box-shadow: 0 2px 8px 0 #e0e0e0;
+  will-change: transform, box-shadow;
+}
+
+.gbtnd {
+  cursor: not-allowed;
+  background-color: #b6b6b6; /* Grey */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -74,72 +236,59 @@ li a:hover {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  cursor: pointer;
   border-radius: 12px;
-  box-shadow: #00000081 0px 0px 3px;
-}
-
-.gbtnd {
-    cursor: not-allowed;
-    background-color: #b6b6b6; /* Grey */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
-    transition: ease-in 0.5s;
-      box-shadow: #00000081 0px 0px 3px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+  box-shadow: 0 2px 8px 0 #e0e0e0;
+  will-change: transform, box-shadow;
 }
 
 .gbtnerr {
-    background-color: #ff4d4d; /* Red */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
-    transition: ease-in 0.5s;
-    cursor: help;
-      box-shadow: #00000081 0px 0px 3px;
+  background-color: #ff4d4d; /* Red */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+  box-shadow: 0 2px 8px 0 #e0e0e0;
+  will-change: transform, box-shadow;
+  cursor: help;
 }
 .gbtnw {
-    background-color: #ffcc00; /* Yellow */
-    border: none;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
-    transition: ease-in 0.5s;
-    cursor: pointer;
-      box-shadow: #00000081 0px 0px 3px;
+  background-color: #ffcc00; /* Yellow */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+  box-shadow: 0 2px 8px 0 #e0e0e0;
+  will-change: transform, box-shadow;
+  cursor: pointer;
 }
 
 .button {
-    background-color: #0077ff; /* Blue */
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
-    transition: ease-in 0.5s;
-    cursor: pointer;
-      box-shadow: #00000081 0px 0px 3px;
-    
+  background-color: #0077ff; /* Blue */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+  box-shadow: 0 2px 8px 0 #e0e0e0;
+  will-change: transform, box-shadow;
+  cursor: pointer;
 }
 
 .link {
@@ -150,4 +299,12 @@ li a:hover {
 .link:hover {
   font-style: italic;
   text-shadow: #b3d7ff 0px 0px 5px;
+}
+
+.sidebar-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
 }

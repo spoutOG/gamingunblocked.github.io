@@ -3,33 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS.css">
+  <title>G@ming Hub - Coming Soon</title>
+  <link rel="icon" href="icon.png" type="image/x-icon">
   <script src="script.js"></script>
-      <link rel="icon" href="icon.png" type="image/x-icon">
-  <title>Coming Soon</title>
 </head>
-<body>
-
-<div class="sidenav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
+  <body>
+<style>
+  body {
+    overflow-x: hidden;
+  }
+</style>
+<div class="sidebar">
+  <ul>
+    <h2 class="sidebar-title">Navigation
+      <button class="sidebar-toggle" onclick="myFunction()" title="Toggle dark mode">🌓</button>
+    </h2>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li class="active"><a href="cs.html">Coming Soon</a></li>
+  </ul>
 </div>
+<div class="with-sidebar">
   </style>
 </head>
 <body>
-  <header class="header">
-    <h1>Coming Soon to this site</h1>
-  </header>
-
+  <h1 class="header">Coming Soon</h1>
+<div>
   <main>
-    <h1 class="tf">New Game Releases</h1>
-    <li class="tf">1.12 WASM</li>
-    <li class="tf">1.8 WASM</li>
-    <li class="tf">CSS Upgrade</li>
-    </p>
+    <p class="tf">Games Coming Soon</p>
+    <h3>Games that will most likely be available in ~1 week:</h3>
+      <div><li>OVO</li></div>
+      <div><li>Sandboxels (1.11, 1.12)</li></div>
   </main>
+</div>
 </body>
 </html>

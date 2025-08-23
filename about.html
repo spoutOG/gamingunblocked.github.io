@@ -12,26 +12,27 @@
   <link rel="icon" href="icon.png" type="image/x-icon">
   <script src="script.js"></script>
 </head>
-<body>
+  <body>
 <style>
-  body{
-  font-family: 'Montserrat', 'Poppins', sans-serif;
-  color: #313131;
-  /* Added overflow-x to hide the horizontal scrollbar during animation */
-  overflow-x: hidden;
-}
+  body {
+    overflow-x: hidden;
+  }
 </style>
-<ul>
-  <li><a href="index.html">Home</a></li>
-  <li class="active"><a href="about.html">About</a></li>
-  <li><a href="cs.html">Coming Soon</a></li>
-</ul>
-
+<div class="sidebar">
+  <ul>
+    <h2 class="sidebar-title">Navigation
+      <button class="sidebar-toggle" onclick="myFunction()" title="Toggle dark mode">🌓</button>
+    </h2>
+    <li><a href="index.html">Home</a></li>
+    <li class="active"><a href="about.html">About</a></li>
+    <li><a href="cs.html">Coming Soon</a></li>
+  </ul>
+</div>
+<div class="with-sidebar">
   </style>
 </head>
 <body>
   <h1 class="header">G@ming Hub</h1>
-  <button class="button" onclick="myFunction()">Toggle dark mode</button>
 <div>
   <main>
     <p class="tf">Info<Details><summary>About Eaglercraft</summary><p>Eaglercraft is a Minecraft client that allows you to play Minecraft in your browser using WebAssembly (WASM) or JavaScript (JS). It aims to provide a seamless gaming experience on various devices, including low-end ones. <b>Versions we have:</b>1.8.8, 1.12, A1.2.6, b1.3, b1.7.3 and Indev.</p></Details></p>
