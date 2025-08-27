@@ -1,3 +1,77 @@
+/* Settings Panel Styles */
+.settings-panel {
+  max-width: 420px;
+  margin: 32px auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 #e0e0e0;
+  padding: 32px 28px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.settings-panel h2 {
+  font-size: 1.4em;
+  margin-bottom: 18px;
+  color: #232a36;
+  text-align: left;
+}
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.setting-label {
+  font-size: 1.08em;
+  color: #232a36;
+  font-weight: 500;
+}
+.setting-toggle {
+  width: 48px;
+  height: 26px;
+  background: #e0e0e0;
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.18s;
+  border: none;
+  outline: none;
+}
+.setting-toggle[aria-checked="true"] {
+  background: #0077ff;
+}
+.setting-toggle .toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px #b3d7ff33;
+  transition: left 0.18s;
+}
+.setting-toggle[aria-checked="true"] .toggle-knob {
+  left: 25px;
+}
+body.dark-mode .settings-panel {
+  background: #23242a;
+  box-shadow: 0 2px 16px 0 #181c20;
+}
+body.dark-mode .settings-panel h2,
+body.dark-mode .setting-label {
+  color: #e0e6ed;
+}
+body.dark-mode .setting-toggle {
+  background: #444950;
+}
+body.dark-mode .setting-toggle[aria-checked="true"] {
+  background: #397eff;
+}
+body.dark-mode .setting-toggle .toggle-knob {
+  background: #fff;
+}
 /* Flat Design Dark Mode */
 body.dark-mode {
   background-color: #181c20;
@@ -97,7 +171,7 @@ body.dark-mode .link:hover {
   vertical-align: middle;
 }
 .sidebar-toggle:hover {
-  background: #0077ff;
+  background: #242424;
   color: #fff;
 }
 /* Sidebar Navigation */
@@ -147,11 +221,11 @@ body.dark-mode .link:hover {
 }
 .sidebar a:hover, .sidebar .active > a {
   background: #e0e0e0;
-  color: #0077ff;
+  color: #222222;
 }
 .sidebar .active > a {
   font-weight: 700;
-  background: #0077ff;
+  background: #181818;
   color: #fff;
 }
 
@@ -211,7 +285,7 @@ body.dark-mode .link:hover {
 }
 
 .gbtn {
-  background-color: #248aff; /* Blue */
+  background-color: #2b2b2b; /* Blue */
   color: white;
   border: none;
   padding: 16px 32px;
@@ -307,4 +381,24 @@ body.dark-mode .link:hover {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.btn2 {
+  border-radius: 25px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+  will-change: transform, box-shadow;
+  padding: 10px 20px;
+  background-color: #525252;
+  color: whitesmoke;
+}
+.btn2:hover, .gbtn:hover, .gbtnw:hover, .gbtnerr:hover, .gbtnd:hover, .button:hover {
+  filter: brightness(1.04);
+  box-shadow: 0 2px 6px 0 #b3d7ff22;
+  transform: translateY(-1px) scale(1.02);
+}
+.btn2:active, .gbtn:active, .gbtnw:active, .gbtnerr:active, .gbtnd:active, .button:active {
+  filter: brightness(0.98);
+  box-shadow: 0 1px 2px 0 #b3d7ff11;
+  transform: scale(0.97);
+  transition: transform 0.08s, box-shadow 0.08s, filter 0.08s;
 }

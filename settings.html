@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS.css">
+  <title>G@ming Hub - Settings</title>
+  <link rel="icon" href="icon.png" type="image/x-icon">
+  <script src="script.js"></script>
+</head>
+<body>
+</script>
+</head>
+  <body>
+<style>
+  body {
+    overflow-x: hidden;
+  }
+  </style>
+  <div class="sidebar">
+  <ul>
+    <h2 class="sidebar-title">Navigation
+    </h2>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="cs.html">Coming Soon</a></li>
+    <li class="active"><a href="settings.html">Settings</a></li>
+    <li><a href="reposongit.html">Repos (GH)</a></li>
+  </ul>
+</div>
+<div class="with-sidebar">
+  <h1 class="header">G@ming Hub</h1>
+  <div class="settings-panel">
+    <h2 class="header">Settings</h2>
+    <div class="setting-row">
+      <span class="setting-label">Dark Mode</span>
+      <button class="setting-toggle" id="toggle-dark" aria-checked="false" role="switch" tabindex="0">
+        <span class="toggle-knob"></span>
+      </button>
+    </div>
+
+      </button>
+    </div>
+  </div>
+</div>
+<script>
+  // Dark mode toggle sync
+  const darkBtn = document.getElementById('toggle-dark');
+  function setDarkToggle(state) {
+    darkBtn.setAttribute('aria-checked', state ? 'true' : 'false');
+    if (state) {
+      darkBtn.classList.add('active');
+    } else {
+      darkBtn.classList.remove('active');
+    }
+  }
+  function updateDarkFromBody() {
+    setDarkToggle(document.body.classList.contains('dark-mode'));
+  }
+  if (darkBtn) {
+    updateDarkFromBody();
+    darkBtn.addEventListener('click', function() {
+      myFunction();
+      updateDarkFromBody();
+    });
+    darkBtn.addEventListener('keydown', function(e) {
+      if (e.key === ' ' || e.key === 'Enter') {
+        myFunction();
+        updateDarkFromBody();
+      }
+    });
+    window.addEventListener('DOMContentLoaded', updateDarkFromBody);
+  }
+
+  // Reduce motion toggle
+  const motionBtn = document.getElementById('toggle-motion');
+  function setMotionToggle(state) {
+    motionBtn.setAttribute('aria-checked', state ? 'true' : 'false');
+    if (state) {
+      motionBtn.classList.add('active');
+    } else {
+      motionBtn.classList.remove('active');
+    }
+  }
+  function applyReduceMotion(state) {
+    if (state) {
+      document.body.classList.add('reduce-motion');
+      localStorage.setItem('reduceMotion', 'enabled');
+    } else {
+      document.body.classList.remove('reduce-motion');
+      localStorage.setItem('reduceMotion', 'disabled');
+    }
+    setMotionToggle(state);
+  }
+  if (motionBtn) {
+    // On load
+    const reduceMotion = localStorage.getItem('reduceMotion') === 'enabled';
+    applyReduceMotion(reduceMotion);
+    motionBtn.addEventListener('click', function() {
+      applyReduceMotion(!document.body.classList.contains('reduce-motion'));
+    });
+    motionBtn.addEventListener('keydown', function(e) {
+      if (e.key === ' ' || e.key === 'Enter') {
+        applyReduceMotion(!document.body.classList.contains('reduce-motion'));
+      }
+    });
+  }
+  // Optionally, add a CSS rule for reduced motion
+  if (!document.getElementById('reduce-motion-style')) {
+    const style = document.createElement('style');
+    style.id = 'reduce-motion-style';
+    style.innerHTML = '.reduce-motion *, .reduce-motion { transition: none !important; animation: none !important; }';
+    document.head.appendChild(style);
+  }
+</script>
+</body>
+</html>
