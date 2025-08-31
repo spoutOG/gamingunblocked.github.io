@@ -2,82 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS.css">
   <title>G@ming Hub - Home</title>
   <link rel="icon" href="icon.png" type="image/x-icon">
   <script src="script.js"></script>
 </head>
-  <body>
-<style>
-  body {
-    overflow-x: hidden;
-  }
-</style>
-<div class="sidebar">
-  <ul>
-    <h2 class="sidebar-title">Navigation
-    </h2>
-    <li class="active"><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="cs.html">Coming Soon</a></li>
-    <li><a href="settings.html">Settings</a></li>
-    <li><a href="reposongit.html">Repos (GH)</a></li>
-  </ul>
-</div>
-<div class="with-sidebar">
-  <h1 class="header">G@ming Hub</h1>
-  <h3 class="header"><button onclick="location.href='settings.html'" class="gbtn">Settings (dark mode)</button></h3>
-  <main>
-<article class="btn">Main Games</article>
-    <article class="btn">
-      <h2>Eaglercraft 1.12 WASM</h2>
-      <p>Latest version of minecraft in browser, WASM enhances performance on lower end devices. Highlights - Fast, New</p>
-      <button onclick="location.href='Games/EaglerCrafts/1.12 WASM.html'" class="gbtn">▶</button>
-    </article>
-    <article class="btn">
-      <h2>Eaglercraft 1.12 JS</h2>
-      <p>Latest version of minecraft in browser, JS is supported on (mostly) every device. Highlights - Slow(ish), New</p>
-      <button onclick="location.href='Games/EaglerCrafts/1.12 JS.html'" class="gbtn">▶</button>
-    </article>
-    <article class="btn">
-      <h2>Eaglercraft 1.8.8 WASM</h2>
-      <p>Old, but most supported version of minecraft in browser, WASM enhances performance on lower end devices. Highlights - Fast, Old</p>
-      <button onclick="location.href='Games/EaglerCrafts/1.8.8 WASM.html'" class="gbtn">▶</button>
-    </article>
-    <article class="btn">
-      <h2>Eaglercraft 1.8.8 JS</h2>
-      <p>Old, but most supported version of minecraft in browser, JS is supported on a very wide range of devices (and im talking WIDE). Highlights - Slow(ish), Old. <b>NOTICE:</b> This play button is yellow because the FPS may drop significantly on lower-end devices.</p>
-      <button  onclick="location.href='Games/EaglerCrafts/1.8.8 JS.html'" class="gbtnw">▶</button>
-    </article>
-    <article class="btn">
-      <h2>Cookie Clicker</h2>
-      <p>Famous cookie clicker game - <b>May take a while to load</b></p>
-      <button onclick="location.href='Games/Cookie Clicker/index.html'" class="gbtn">▶</button>
-    </article>
-    <article class="btn">
-      <h2>Sandboxels (1.12)</h2>
-      <p>Sandbox game, useful when you're REALLY bored and want sumt to do</p>
-      <button onclick="location.href='Games/sandboxels (1.12)/index.html'" class="gbtn">▶</button>
-    </article>
-    <article class="btn">
-      <h2>Sandboxels (1.11)</h2>
-      <p>Sandbox game, useful when you're REALLY bored and want sumt to do (OLD Version) <b><i>This game does NOT work.</i></b></p>
-      <button class="gbtnerr">✖</button>
-    </article>
-    <article class="btn">
-      <h2>Placeholder for next game</h2>
-      <p>N/A</p>
-      <button class="gbtnd">Coming soon</button>
-    </article>
-  </main>
-</div>
-<ul>
-  </main>
-</div>
+<body>
+
+  <div class="sidebar">
+    <h2 class="sidebar-title">G@ming Hub</h2>
+    <ul>
+      <li class="active"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fa fa-info-circle"></i> About</a></li>
+      <li><a href="cs.html"><i class="fa fa-clock-o"></i> Coming Soon</a></li>
+      <li><a href="settings.html"><i class="fa fa-cog"></i> Settings</a></li>
+      <li><a href="reposongit.html"><i class="fa fa-github"></i> Repos (GH)</a></li>
+    </ul>
+  </div>
+
+  <div class="with-sidebar">
+    <main>
+      <header class="fade-in-up">
+        <h1>Gaming Palace</h1>
+        <p>Go to <a class="link" href="settings.html">Settings</a> for dark mode.</p>
+      </header>
+      
+      <h2 class="fade-in-up" style="animation-delay: 0.3s;">Main Games</h2>
+
+      <article class="fade-in-up" style="animation-delay: 0.4s;">
+        <h2>Eaglercraft 1.12 WASM</h2>
+        <p>Latest version of Minecraft in-browser, WASM enhances performance. Highlights - Fast, New</p>
+        <button onclick="location.href='Games/EaglerCrafts/1.12 WASM.html'" class="gbtn" aria-label="Play Eaglercraft 1.12 WASM"><i class="fa fa-play"></i></button>
+      </article>
+
+      <article class="fade-in-up" style="animation-delay: 0.5s;">
+        <h2>Eaglercraft 1.12 JS</h2>
+        <p>Latest version of Minecraft in-browser, JS is supported on most devices. Highlights - Slower, New</p>
+        <button onclick="location.href='Games/EaglerCrafts/1.12 JS.html'" class="gbtn" aria-label="Play Eaglercraft 1.12 JS"><i class="fa fa-play"></i></button>
+      </article>
+
+      <article class="fade-in-up" style="animation-delay: 0.6s;">
+        <h2>Eaglercraft 1.8.8 WASM</h2>
+        <p>Classic supported version, WASM enhances performance on lower-end devices. Highlights - Fast, Old</p>
+        <button onclick="location.href='Games/EaglerCrafts/1.8.8 WASM.html'" class="gbtn" aria-label="Play Eaglercraft 1.8.8 WASM"><i class="fa fa-play"></i></button>
+      </article>
+
+      <article class="fade-in-up" style="animation-delay: 0.7s;">
+        <h2>Eaglercraft 1.8.8 JS</h2>
+        <p>Classic supported version with wide device compatibility. <b>NOTICE:</b> FPS may drop significantly on lower-end devices.</p>
+        <button onclick="location.href='Games/EaglerCrafts/1.8.8 JS.html'" class="gbtnw" aria-label="Play Eaglercraft 1.8.8 JS with warning"><i class="fa fa-exclamation-triangle"></i></button>
+      </article>
+
+      <article class="fade-in-up" style="animation-delay: 0.8s;">
+        <h2>Cookie Clicker</h2>
+        <p>The famous cookie-clicking game. <b>May take a moment to load.</b></p>
+        <button onclick="location.href='Games/Cookie Clicker/index.html'" class="gbtn" aria-label="Play Cookie Clicker"><i class="fa fa-play"></i></button>
+      </article>
+
+      <article class="fade-in-up" style="animation-delay: 0.9s;">
+        <h2>Sandboxels (1.12)</h2>
+        <p>A fun sandbox game for when you're bored and want something to do.</p>
+        <button onclick="location.href='Games/sandboxels (1.12)/index.html'" class="gbtn" aria-label="Play Sandboxels version 1.12"><i class="fa fa-play"></i></button>
+      </article>
+      
+      <article class="fade-in-up" style="animation-delay: 1.0s;">
+        <h2>Sandboxels (1.11)</h2>
+        <p>An older version of the sandbox game. <b><i>This game does NOT work.</i></b></p>
+        <button class="gbtnerr" aria-label="Sandboxels version 1.11 is not working"><i class="fa fa-times"></i></button>
+      </article>
+
+      <article class="fade-in-up" style="animation-delay: 1.1s;">
+        <h2>Slope</h2>
+        <p>The classic, addictive slope game you know and love. A true classic!</p>
+        <button onclick="location.href='Games/slope.html'" class="gbtn" aria-label="Play Slope"><i class="fa fa-play"></i></button>
+      </article>
+
+      <h2 class="fade-in-up" style="animation-delay: 0.3s;">Ruffle + Flash games, Stashes included</h2>
+      <article class="fade-in-up" style="animation-delay: 1.1s;">
+        <h2>Ruffle Flash Player</h2>
+        <p>Play your favorite Flash games with Ruffle</p>
+        <button onclick="location.href='Ruffle Player/Ruffle (Click me).html'" class="gbtn" aria-label="Play Ruffle Flash Player"><i class="fa fa-play"></i></button>
+      </article>
+      
+      <article class="fade-in-up" style="animation-delay: 1.1s;">
+        <h2>Stash 1 (Contains popular SWF's)</h2>
+        <p>126 MB, light on storage</p>
+        <button onclick="location.href='https://drive.google.com/drive/folders/1Qfo4SlonKLElI2mHxyciARe59AFy-Vpg?usp=sharing'" class="gbtn" aria-label="Play Ruffle Flash Player"><i class="fa fa-external-link"></i></button>
+      </article>
+
+      <article class="fade-in-up" style="animation-delay: 1.1s;">
+        <h2>Stash 2</h2>
+        <p>379 MB, medium on storage</p>
+        <button onclick="location.href='https://drive.google.com/drive/folders/1a_9vsshFljqr9vLizXfoMZze8isjq1Q2?usp=sharing'" class="gbtn" aria-label="Play Ruffle Flash Player"><i class="fa fa-external-link"></i></button>
+      </article>
+    </main>
+    <footer class="footer">
+      G@ming Palace v1.8.3 &copy; 2025
+    </footer>
+  </div>
+
 </body>
 </html>
