@@ -3,42 +3,32 @@
    ========================================================================== */
 
 :root {
-  /* Colors - Light Mode */
-  --color-bg-light: #f4f6f9;
-  --color-surface-light: #ffffff;
-  --color-border-light: #e0e4e8;
-  --color-text-primary-light: #232a36;
-  --color-text-secondary-light: #5a6474;
-  --color-accent-light: #0077ff;
-  --color-accent-hover-light: #005fcc;
-  --color-special-light: #ffc82c;
-  --color-special-text-light: #232a36;
-  --color-error-light: #ff4d4d;
-
-  /* Colors - Dark Mode (applied via body.dark-mode) */
-  --color-bg-dark: #181c20;
-  --color-surface-dark: #23242a;
-  --color-border-dark: #3a3f46;
-  --color-text-primary-dark: #e0e6ed;
-  --color-text-secondary-dark: #a0a8b4;
-  --color-accent-dark: #397eff;
-  --color-accent-hover-dark: #5c9bff;
-  --color-special-dark: #ffe066;
-  --color-special-text-dark: #23242a;
-  --color-error-dark: #ff6666;
+  /* Default Theme (Dark) */
+  --color-bg: #181c20;
+  --color-surface: #23242a;
+  --color-border: #3a3f46;
+  --color-text-primary: #e0e6ed;
+  --color-text-secondary: #a0a8b4;
+  --color-accent: #397eff;
+  --color-accent-hover: #5c9bff;
+  --color-special: #ffe066;
+  --color-special-text: #23242a;
+  --color-error: #ff6666;
+  --color-success: #28a745;
 
   /* Typography */
-  --font-primary: 'Montserrat', sans-serif; /* Corrected font name */
+  --font-primary: 'Montserrat', sans-serif;
 
   /* Animation & Effects */
   --transition-speed-fast: 0.15s;
   --transition-speed-normal: 0.25s;
   --transition-easing: ease-in-out;
-  --border-radius-small: 8px;
-  --border-radius-medium: 16px;
-  --border-radius-large: 24px;
+  --border-radius-small: 100px;
+  --border-radius-medium: 45px;
+  --border-radius-large: 55px;
   --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-interactive: 0 6px 16px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 *, *::before, *::after {
@@ -47,8 +37,8 @@
 
 body {
   font-family: var(--font-primary);
-  background-color: var(--color-bg-light);
-  color: var(--color-text-primary-light);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
   overflow-x: hidden;
   transition: background-color var(--transition-speed-normal) var(--transition-easing), color var(--transition-speed-normal) var(--transition-easing);
 }
@@ -57,10 +47,9 @@ body {
    2. Page Load & Content Animation
    ========================================================================== */
 
-/* Add this animation to elements you want to fade in on page load */
 .fade-in-up {
   animation: fadeInUp 0.6s var(--transition-easing) both;
-  animation-delay: 0.2s; /* Stagger this for multiple elements */
+  animation-delay: 0.2s;
 }
 
 @keyframes fadeInUp {
@@ -75,69 +64,77 @@ body {
 }
 
 /* ==========================================================================
-   3. Layout: Sidebar & Main Content
+   3. Layout & Components
    ========================================================================== */
 
 .sidebar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 220px; /* Slightly wider for better spacing */
-  height: 100vh;
-  background: var(--color-surface-light);
-  border-right: 1px solid var(--color-border-light);
+  top: 32px;
+  left: 32px;
+  height: calc(100vh - 64px);
+  width: 250px;
+  border-radius: var(--border-radius-medium);
+  backdrop-filter: blur(10px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   z-index: 1100;
-  transition: background-color var(--transition-speed-normal) var(--transition-easing), border-color var(--transition-speed-normal) var(--transition-easing);
+  padding: 24px;
+  transition: all var(--transition-speed-normal) var(--transition-easing);
 }
 
 .sidebar-title {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  padding: 24px;
-  text-align: center;
-  color: var(--color-text-primary-light);
+  text-align: left;
+  color: var(--color-text-primary);
   transition: color var(--transition-speed-normal) var(--transition-easing);
+  margin-bottom: 24px;
 }
 
 .sidebar ul {
   list-style: none;
   margin: 0;
-  padding: 0 12px; /* Padding for list items */
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 8px;
 }
 
 .sidebar a {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--color-text-secondary-light);
+  color: var(--color-text-secondary);
   padding: 14px 20px;
   text-decoration: none;
   font-weight: 600;
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-medium);
   font-size: 1rem;
   transition: background var(--transition-speed-fast) var(--transition-easing), color var(--transition-speed-fast) var(--transition-easing), transform var(--transition-speed-fast) var(--transition-easing);
   position: relative;
 }
 
 .sidebar a:hover {
-  background: var(--color-bg-light);
-  color: var(--color-text-primary-light);
-  transform: translateX(4px);
+  background: var(--color-border);
+  color: var(--color-text-primary);
+  transform: translateX(0);
 }
 
 .sidebar .active > a {
-  background: var(--color-accent-light);
+  background: var(--color-accent);
   color: #ffffff;
   font-weight: 700;
+  box-shadow: var(--shadow-subtle);
 }
 
 .with-sidebar {
-  margin-left: 220px;
+  margin-left: 304px;
 }
 
-/* Main Content Wrapper */
 main {
   padding: 32px;
 }
@@ -145,19 +142,18 @@ main {
 article {
   margin-bottom: 24px;
   padding: 24px;
-  border: 1px solid var(--color-border-light);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius-medium);
-  background-color: var(--color-surface-light);
+  background-color: var(--color-surface);
   box-shadow: var(--shadow-subtle);
   transition: all var(--transition-speed-normal) var(--transition-easing);
 }
 
 /* ==========================================================================
-   4. Components: Buttons, Links, Toggles
+   4. Buttons & Links
    ========================================================================== */
 
-/* Generic Button Base */
-.btn, .gbtn, .gbtnw, .gbtnerr, .gbtnd, .button {
+.btn, .gbtn, .gbtnw, .gbtnerr, .gbtnd, .button, .gbtng {
   display: inline-block;
   font-family: var(--font-primary);
   font-size: 1rem;
@@ -172,48 +168,47 @@ article {
   will-change: transform, box-shadow;
 }
 
-.btn:hover, .gbtn:hover, .gbtnw:hover, .gbtnerr:hover, .button:hover {
+.btn:hover, .gbtn:hover, .gbtnw:hover, .gbtnerr:hover, .button:hover, .gbtng:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-interactive);
   filter: brightness(1.05);
 }
 
-.btn:active, .gbtn:active, .gbtnw:active, .gbtnerr:active, .button:active {
+.btn:active, .gbtn:active, .gbtnw:active, .gbtnerr:active, .button:active, .gbtng:active {
   transform: translateY(0px) scale(0.98);
   box-shadow: var(--shadow-subtle);
   filter: brightness(0.95);
   transition-duration: 0.08s;
 }
 
-/* Primary Action Button */
 .gbtn, .button {
-  background-color: var(--color-accent-light);
+  background-color: var(--color-accent);
   color: #ffffff;
 }
 
-/* Warning/Special Button */
 .gbtnw {
-  background-color: var(--color-special-light);
-  color: var(--color-special-text-light);
+  background-color: var(--color-special);
+  color: var(--color-special-text);
 }
 
-/* Error/Danger Button */
 .gbtnerr {
-  background-color: var(--color-error-light);
+  background-color: var(--color-error);
   color: #ffffff;
 }
 
-/* Disabled Button */
 .gbtnd {
-  background-color: #b6b6b6;
-  color: #ffffff;
+  background-color: #444950;
+  color: #b6b6b6;
   cursor: not-allowed;
   filter: grayscale(50%);
 }
+.gbtng {
+  background-color: var(--color-success);
+  color: #ffffff;
+}
 
-/* Text Link */
 .link {
-  color: var(--color-accent-light);
+  color: var(--color-accent);
   text-decoration: none;
   font-weight: 600;
   position: relative;
@@ -228,7 +223,7 @@ article {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: var(--color-special-light);
+  background-color: var(--color-special);
   transform-origin: bottom right;
   transition: transform var(--transition-speed-normal) var(--transition-easing);
 }
@@ -239,13 +234,13 @@ article {
 }
 
 /* ==========================================================================
-   5. Settings Panel
+   5. Settings Panel & Toggles
    ========================================================================== */
 
 .settings-panel {
   max-width: 450px;
   margin: 32px auto;
-  background: var(--color-surface-light);
+  background: var(--color-surface);
   border-radius: var(--border-radius-medium);
   padding: 32px;
   display: flex;
@@ -258,7 +253,7 @@ article {
 .settings-panel h2 {
   font-size: 1.5rem;
   margin: 0 0 16px 0;
-  color: var(--color-text-primary-light);
+  color: var(--color-text-primary);
 }
 
 .setting-row {
@@ -270,15 +265,14 @@ article {
 
 .setting-label {
   font-size: 1.05rem;
-  color: var(--color-text-primary-light);
+  color: var(--color-text-primary);
   font-weight: 500;
 }
 
-/* Accessible Toggle Switch */
 .setting-toggle {
   width: 48px;
   height: 26px;
-  background: #ccc;
+  background: var(--color-border);
   border-radius: 13px;
   position: relative;
   cursor: pointer;
@@ -289,11 +283,11 @@ article {
 }
 
 .setting-toggle:focus-visible {
-  box-shadow: 0 0 0 3px var(--color-accent-light);
+  box-shadow: 0 0 0 3px var(--color-accent);
 }
 
 .setting-toggle[aria-checked="true"] {
-  background: var(--color-accent-light);
+  background: var(--color-accent);
 }
 
 .setting-toggle .toggle-knob {
@@ -312,80 +306,150 @@ article {
 }
 
 /* ==========================================================================
-   6. Dark Mode
+   6. Custom Themes
    ========================================================================== */
 
-body.dark-mode {
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-primary-dark);
+/* Moonlight Theme */
+body.moonlight {
+  --color-bg: #191629;
+  --color-surface: #2a253e;
+  --color-border: #3e3852;
+  --color-text-primary: #e6e5ec;
+  --color-text-secondary: #c9c5d1;
+  --color-accent: #7c4dff;
+  --color-accent-hover: #8e62ff;
+  --color-special: #ffc82c;
+  --color-special-text: #2c2937;
+  --color-error: #f36b6b;
+  --color-success: #28a745;
 }
 
-body.dark-mode .sidebar {
-  background: var(--color-surface-dark);
-  border-right-color: var(--color-border-dark);
+body.moonlight .sidebar {
+  background: rgba(25, 22, 41, 0.6);
 }
 
-body.dark-mode .sidebar-title,
-body.dark-mode .settings-panel h2,
-body.dark-mode .setting-label {
-  color: var(--color-text-primary-dark);
+body.moonlight .gbtnd {
+  background-color: #4a455c;
+  color: #a097b6;
 }
 
-body.dark-mode .sidebar a {
-  color: var(--color-text-secondary-dark);
+/* Sandy Theme */
+body.sandy {
+  --color-bg: #f9f4e9;
+  --color-surface: #ffffff;
+  --color-border: #e8e0d4;
+  --color-text-primary: #3d3429;
+  --color-text-secondary: #7a7065;
+  --color-accent: #b8860b;
+  --color-accent-hover: #d4a017;
+  --color-special: #ffc82c;
+  --color-special-text: #3d3429;
+  --color-error: #f36b6b;
+  --color-success: #28a745;
 }
 
-body.dark-mode .sidebar a:hover {
-  background: var(--color-bg-dark);
-  color: var(--color-text-primary-dark);
+body.sandy .sidebar {
+  background: rgba(255, 255, 255, 0.8);
 }
 
-body.dark-mode .sidebar .active > a {
-  background: var(--color-accent-dark);
-  color: #ffffff;
+body.sandy .gbtnd {
+  background-color: #d4cfc5;
+  color: #a097b6;
 }
 
-body.dark-mode article,
-body.dark-mode .settings-panel {
-  background-color: var(--color-surface-dark);
-  border-color: var(--color-border-dark);
+/* Coffee Theme */
+body.coffee {
+  --color-bg: #1e1714;
+  --color-surface: #2c231e;
+  --color-border: #4a3e35;
+  --color-text-primary: #f0e6e0;
+  --color-text-secondary: #c7bcae;
+  --color-accent: #6f4e37;
+  --color-accent-hover: #8d6b54;
+  --color-special: #e6c888;
+  --color-special-text: #1e1714;
+  --color-error: #ff7f50;
+  --color-success: #66b266;
 }
 
-/* Dark Mode Components */
-body.dark-mode .gbtn, body.dark-mode .button {
-  background-color: var(--color-accent-dark);
+body.coffee .sidebar {
+  background: rgba(44, 35, 30, 0.8);
 }
 
-body.dark-mode .gbtnw {
-  background-color: var(--color-special-dark);
-  color: var(--color-special-text-dark);
+body.coffee .gbtnd {
+  background-color: #4a3e35;
+  color: #a097b6;
 }
 
-body.dark-mode .gbtnerr {
-  background-color: var(--color-error-dark);
+/* Forest Theme */
+body.forest {
+  --color-bg: #122013;
+  --color-surface: #1b291c;
+  --color-border: #332f26;
+  --color-text-primary: #cddbc3;
+  --color-text-secondary: #889688;
+  --color-accent: #4d6c23;
+  --color-accent-hover: #6c9a32;
+  --color-special: #796846;
+  --color-special-text: #122013;
+  --color-error: #a35252;
+  --color-success: #267e26;
 }
 
-body.dark-mode .gbtnd {
-  background-color: #444950;
-  color: #b6b6b6;
+body.forest .sidebar {
+  background: rgba(28, 45, 29, 0.8);
 }
 
-body.dark-mode .link {
-  color: var(--color-accent-dark);
+body.forest .gbtnd {
+  background-color: #332f26;
+  color: #889688;
 }
 
-body.dark-mode .link::after {
-  background-color: var(--color-special-dark);
+/* ==========================================================================
+   7. Additional Settings
+   ========================================================================== */
+
+body.font-small {
+  font-size: 0.9rem;
 }
 
-body.dark-mode .setting-toggle {
-  background: #444950;
+body.font-large {
+  font-size: 1.15rem;
 }
 
-body.dark-mode .setting-toggle[aria-checked="true"] {
-  background: var(--color-accent-dark);
+body.high-contrast {
+  --color-bg: #000000;
+  --color-surface: #000000;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #dddddd;
+  --color-accent: #ffffff;
+  --color-accent-hover: #cccccc;
+  --color-border: #ffffff;
+  --shadow-subtle: none;
+  --shadow-interactive: none;
 }
 
-body.dark-mode .setting-toggle:focus-visible {
-  box-shadow: 0 0 0 3px var(--color-accent-dark);
+body.high-contrast .sidebar,
+body.high-contrast article,
+body.high-contrast .settings-panel {
+  border: 2px solid var(--color-text-primary);
+  box-shadow: none;
+}
+body.high-contrast .gbtnd {
+  background-color: #333333;
+}
+body.high-contrast .gbtn, body.high-contrast .button {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* ==========================================================================
+   8. Other general necessities for text
+   ========================================================================== */
+
+.txt {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: var(--color-text-primary);
 }

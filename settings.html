@@ -26,6 +26,7 @@
 
   <div class="with-sidebar">
     <main>
+      
       <div class="settings-panel fade-in-up">
         <h2>Settings</h2>
 
@@ -44,21 +45,45 @@
         </div>
 
         <div class="setting-row">
+          <span class="setting-label">Font Size</span>
+          <select class="setting-select" id="font-select" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+            <option value="default">Default</option>
+            <option value="font-large">Large</option>
+            <option value="font-small">Small</option>
+          </select>
+        </div>
+
+        <div class="setting-row">
+          <span class="setting-label">High Contrast Mode</span>
+          <button class="setting-toggle" id="toggle-contrast" aria-checked="false" role="switch">
+            <span class="toggle-knob"></span>
+          </button>
+        </div>
+        
+        <div class="setting-row">
           <span class="setting-label">Theme</span>
           <select class="setting-select" id="theme-select" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
             <option value="default">Default</option>
             <option value="moonlight">Moonlight</option>
+            <option value="sandy">Sandy</option>
+            <option value="coffee">Coffee</option>
+            <option value="forest">Forest</option>
           </select>
         </div>
-
+        <i class="fa fa-info-circle"><p class="txt">Some themes are in beta, and so are most new settings</p></i>
       </div>
     </main>
 
     <footer class="footer">
-      G@ming Hub v1.0.0 &copy; 2025
+      G@ming Hub v1.9 &copy; 2025
     </footer>
   </div>
 
+  <script src="script.js"></script>
+</body>
+</html>
+</div>
+</main>
   <script src="script.js"></script>
   <script>
     // Dark mode toggle logic

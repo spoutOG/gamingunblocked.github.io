@@ -31,4 +31,4 @@ Welcome to **G@ming Hub** — your one-stop destination for browser-based games,
 ---
 
 > Made with ❤️ by spoutOG. Enjoy gaming!
->Version data: Pre-Release 2
+>Version data: Stable Release 1.9
