@@ -22,7 +22,7 @@ Welcome to **G@ming Hub** — your one-stop destination for browser-based games,
   The famous incremental game. May take a while to load.
 - **Coming Soon:**
   - OVO
-  - Sandboxels (1.11, 1.12)
+  - Sandboxels (1.11 - Dosent work, 1.12)
 
 ## 📥 Download
 
@@ -31,4 +31,4 @@ Welcome to **G@ming Hub** — your one-stop destination for browser-based games,
 ---
 
 > Made with ❤️ by spoutOG. Enjoy gaming!
->Version data: Stable Release 1.9
+>Version data: Stable Release 1.9.1
