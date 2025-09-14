@@ -37,9 +37,9 @@ function applyRememberedTheme() {
     document.body.classList.remove("high-contrast");
   }
 
-  // Apply the site theme (e.g., 'moonlight' or 'sandy')
+  // Apply the site theme (e.g., 'moonlight', 'sandy', or 'light')
   const theme = localStorage.getItem("siteTheme") || "default";
-  document.body.classList.remove("moonlight", "sandy", "coffee", "forest");
+  document.body.classList.remove("moonlight", "sandy", "coffee", "forest", "light");
 
   if (theme === "moonlight") {
     document.body.classList.add("moonlight");
@@ -47,6 +47,9 @@ function applyRememberedTheme() {
     if (!document.getElementById('stars-bg')) {
       startStars();
     }
+  } else if (theme === "light") {
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("light");
   } else {
     // For any other theme, remove the stars canvas if it exists
     document.body.classList.add(theme);
@@ -61,16 +64,25 @@ function applyRememberedTheme() {
 const themeSelect = document.getElementById('theme-select');
 if (themeSelect) {
   const applyTheme = (theme) => {
-    document.body.classList.remove('moonlight', 'sandy', 'coffee', 'forest');
+    document.body.classList.remove('moonlight', 'sandy', 'coffee', 'forest', 'light');
+    document.body.classList.remove('dark-mode');
+    
     if (theme === 'moonlight') {
       document.body.classList.add('moonlight');
+      document.body.classList.add('dark-mode');
     } else if (theme === 'sandy') {
       document.body.classList.add('sandy');
+      document.body.classList.add('dark-mode');
     } else if (theme === 'coffee') {
       document.body.classList.add('coffee');
+      document.body.classList.add('dark-mode');
     } else if (theme === 'forest') {
       document.body.classList.add('forest');
+      document.body.classList.add('dark-mode');
+    } else if (theme === 'light') {
+      document.body.classList.add('light');
     }
+
     localStorage.setItem('siteTheme', theme);
   };
 

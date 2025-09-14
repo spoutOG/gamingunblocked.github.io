@@ -16,6 +16,19 @@
   --color-error: #ff6666;
   --color-success: #28a745;
 
+  /* Light Theme */
+  --light-color-bg: #ffffff;
+  --light-color-surface: #ffffff;
+  --light-color-border: #e2e8f0;
+  --light-color-text-primary: #1e293b;
+  --light-color-text-secondary: #64748b;
+  --light-color-accent: #3b82f6;
+  --light-color-accent-hover: #60a5fa;
+  --light-color-special: #eab308;
+  --light-color-special-text: #1e293b;
+  --light-color-error: #ef4444;
+  --light-color-success: #22c55e;
+
   /* Typography */
   --font-primary: 'Montserrat', sans-serif;
 
@@ -43,6 +56,20 @@ body {
   transition: background-color var(--transition-speed-normal) var(--transition-easing), color var(--transition-speed-normal) var(--transition-easing);
 }
 
+body.light {
+  --color-bg: var(--light-color-bg);
+  --color-surface: var(--light-color-surface);
+  --color-border: var(--light-color-border);
+  --color-text-primary: var(--light-color-text-primary);
+  --color-text-secondary: var(--light-color-text-secondary);
+  --color-accent: var(--light-color-accent);
+  --color-accent-hover: var(--light-color-accent-hover);
+  --color-special: var(--light-color-special);
+  --color-special-text: var(--light-color-special-text);
+  --color-error: var(--light-color-error);
+  --color-success: var(--light-color-success);
+}
+
 /* ==========================================================================
    3. Layout & Components
    ========================================================================== */
@@ -63,6 +90,10 @@ body {
   z-index: 1100;
   padding: 24px;
   transition: all var(--transition-speed-normal) var(--transition-easing);
+}
+
+body.light .sidebar {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .sidebar-title {
@@ -183,6 +214,11 @@ article {
   cursor: not-allowed;
   filter: grayscale(50%);
 }
+body.light .gbtnd {
+  background-color: #d1d5db;
+  color: #9ca3af;
+}
+
 .gbtng {
   background-color: var(--color-success);
   color: #ffffff;

@@ -33,10 +33,11 @@
         <div class="setting-row">
           <span class="setting-label">Theme</span>
           <select class="setting-select" id="theme-select" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
-            <option value="default">Default</option>
+            <option value="default">Default Dark</option>
+            <option value="light">Light</option>
             <option value="moonlight">Moonlight</option>
-            <option value="sandy">Sandy</option>
-            <option value="coffee">Coffee</option>
+            <option value="sandy">Sunshine</option>
+            <option value="coffee">Latte</option>
             <option value="forest">Forest</option>
           </select>
         </div>
@@ -44,82 +45,8 @@
       </div>
     </main>
 
-    <footer class="footer">
-      G@ming Hub v1.9.1 &copy; 2025
-    </footer>
   </div>
 
   <script src="script.js"></script>
-</body>
-</html>
-</div>
-</main>
-  <script src="script.js"></script>
-  <script>
-    // Dark mode toggle logic
-    const darkBtn = document.getElementById('toggle-dark');
-    if (darkBtn) {
-      const updateDarkToggle = () => {
-        const isDark = document.body.classList.contains('dark-mode');
-        darkBtn.setAttribute('aria-checked', isDark);
-      };
-
-      darkBtn.addEventListener('click', () => {
-        // Assuming myFunction() is your function in script.js that toggles the class
-        if (typeof myFunction === 'function') {
-          myFunction(); 
-        }
-        updateDarkToggle();
-      });
-
-      // Initialize on load
-      updateDarkToggle();
-    }
-
-    // Reduce motion toggle logic
-    const motionBtn = document.getElementById('toggle-motion');
-    if (motionBtn) {
-      const applyReduceMotion = (state) => {
-        if (state) {
-          document.body.classList.add('reduce-motion');
-          localStorage.setItem('reduceMotion', 'enabled');
-        } else {
-          document.body.classList.remove('reduce-motion');
-          localStorage.setItem('reduceMotion', 'disabled');
-        }
-        motionBtn.setAttribute('aria-checked', state);
-      };
-
-      motionBtn.addEventListener('click', () => {
-        const isMotionReduced = !document.body.classList.contains('reduce-motion');
-        applyReduceMotion(isMotionReduced);
-      });
-
-      // Initialize on load
-      const reduceMotion = localStorage.getItem('reduceMotion') === 'enabled';
-      applyReduceMotion(reduceMotion);
-    }
-
-    // Theme select logic
-    const themeSelect = document.getElementById('theme-select');
-    if (themeSelect) {
-      const applyTheme = (theme) => {
-        document.body.classList.remove('moonlight');
-        if (theme === 'moonlight') {
-          document.body.classList.add('moonlight');
-        }
-        localStorage.setItem('siteTheme', theme);
-      };
-
-      themeSelect.addEventListener('change', function() {
-        applyTheme(this.value);
-      });
-
-      // Initialize on load
-      const currentTheme = localStorage.getItem('siteTheme') || 'default';
-      themeSelect.value = currentTheme;
-      applyTheme(currentTheme);
-    }
-  </script>
 </body>
 </html>
